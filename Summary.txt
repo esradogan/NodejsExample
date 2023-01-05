@@ -1,0 +1,19 @@
+- Node js yalnız 1 tane js threadi kullanır.
+
+- Uzun süreli işler worker pollda çalışır ve birden fazla thread vardır. Js den bağımsızdır.
+- İşlem tamamlandıktan sonra callback triggerlanarak event loop çalışmaya başlar.
+
+- Timer callbacklari, IO callbackleri, event callbackleri ve sonrasında close callbackleri çalışır.
+- Sonrasında hiçbir event handler kalmadıysa nodejs programından çıkılır.
+
+- Açık olan eventler nodejs de bir sayaç ile dinlenir. Kaydedilen her yeni event listener sayacı 1 artırır.
+- İhtiyaç kalmayan her event için de bu sayaç 1 azaltılır.
+- Create server ile bir sunucu oluşturup gelen istekleri dinlediğimiz için bu varsayılan olarak hiç bitmeyen bir olaydır ve aslında her zaman bir tane referans vardır ve açıktır. Yani exit fonksiyonu kendiliğinden çalışmaz.
+
+----Flow----
+- Incoming requests -> Code and Single JS Thread -> (start Event Loop) "fs" -> (Send to) Worker Pool (Do heavy lifting) (Different Threads) -> Trigger callbacks -> Event Loop (Handle Event Callbacks)
+
+- Worker pool işlerin performanslı kalmasını sağlar.
+
+- Nodejs part 37 -
+
