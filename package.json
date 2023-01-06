@@ -1,0 +1,24 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "Complete node js guide",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "start-server": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/esradogan/NodejsExample.git"
+  },
+  "author": "Esra Dogan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/esradogan/NodejsExample/issues"
+  },
+  "homepage": "https://github.com/esradogan/NodejsExample#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
